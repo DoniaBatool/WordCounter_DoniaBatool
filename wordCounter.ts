@@ -1,8 +1,8 @@
-#! usr/bin/env node
+#! /usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
 
-let counter=(text:string)=>text.replace(/\s/g,"").length
+let counter=(text:string)=>text.trim().split(" ").length
 let isAvailable=true
 async function wordCount(counter:(word:string)=>number){
     console.log(`
@@ -45,18 +45,9 @@ if (response2.option=="Continue"){
     
 })
 console.log(counter(response.text))
-
 }
-
 else{
-    
     console.log("GoodBye!")
-    
     isAvailable=false
-    
-}}
-
-
-}
-
+    }}}
 wordCount(counter)

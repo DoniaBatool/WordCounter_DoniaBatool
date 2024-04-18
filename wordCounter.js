@@ -1,7 +1,7 @@
-#! usr/bin/env node
+#! /usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
-let counter = (text) => text.replace(/\s/g, "").length;
+let counter = (text) => text.trim().split(" ").length;
 let isAvailable = true;
 async function wordCount(counter) {
     console.log(`
